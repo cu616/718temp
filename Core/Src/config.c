@@ -24,15 +24,19 @@ void config_encoder()
 void config1()
 {
     HAL_TIM_Encoder_Stop_IT(&htim1, TIM_CHANNEL_ALL);
-    Trace(60);
+    float speed = 60;
+    Trace(speed);
     float initial_angle = Yaw;
-    trace_encoder(800,60);
-    TurnRightangel(1,60);
-    Trace(60);
+    trace_encoder(800,60);  //向前移动
+
+    TurnRightangel(1,speed);
+    Trace(speed);
+
     reverse_straight(initial_angle+90, 60);
-    trace_encoder(800,60);
-    TurnRightangel(1,60);
-    Trace(60);
+    trace_encoder(800,speed);  //
+
+    TurnRightangel(1,speed);
+    Trace(speed);
     stop();
 }
 

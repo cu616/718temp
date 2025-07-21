@@ -65,7 +65,7 @@ void task1()
 	}
 
     trace_to_cross_serial(speed);
-	car_brake();
+	car_brake(80);
 	// 等待卸药
 	reverse_straight(initial_angle + 90 * flag, 50);
 	// reverse(40);
@@ -85,7 +85,7 @@ void task1()
 		trace_to_cross_serial(speed);
 		i--;
 	}
-	car_brake();
+	car_brake(80);
 	//回到药房
 }
 

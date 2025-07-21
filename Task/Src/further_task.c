@@ -3,6 +3,65 @@
 
 void further_task1()
 {
+        int8_t flag = 0;
+    int8_t i = 0;
+    float initial_angle;
+    encoder_flag = 0;
+    float speed = 80;
+    float turn_speed = 70;
+    char tag = 0;//用于提醒另一辆小车采取下一步行动
+    //需要用到的相关变量及其初始化
+
+    GetTargetNum();
+
+    HAL_UART_Receive(&huart3,read_data,2,HAL_MAX_DELAY);
+    //接收到小车1传来信号后启动
+
+    while (HAL_GPIO_ReadPin(DETECT_GPIO_Port, DETECT_Pin) ==  GPIO_PIN_SET)  {}
+    //出发前读取纸片并等待装药
+
+    if(read_data[0] == target + '0'){
+        flag = 1;
+    }
+    else{
+        flag = -1;
+    }
+    //计算小车B的转向方向
+
+    trace(100);
+    //
+    trace(100);
+    //
+    trace(speed);
+    initial_angle = Yaw;
+    HAL_GPIO_TogglePin(LEDY_GPIO_Port, LEDY_Pin);
+    //先进军到暂停位置
+
+    HAL_UART_Transmit(&huart3,&tag,1,30);
+    //暂停后提醒小车1开始撤回
+
+    HAL_UART_Receive(&huart3, &tag, 1, HAL_MAX_DELAY);
+    HAL_GPIO_TogglePin(LEDY_GPIO_Port, LEDY_Pin);
+
+
+    HAL_UART_Receive(&huart3,&tag,1,HAL_MAX_DELAY);
+    //等待小车1完成倒车
+
+    //reverse_encoder(60);
+    reverse_straight(initial_angle, 50);
+    //Reverse(40);
+    autoturn_serial(flag, turn_speed);
+    trace(40);
+    HAL_GPIO_TogglePin(LEDR_GPIO_Port, LEDR_Pin);
+    while (HAL_GPIO_ReadPin(DETECT_GPIO_Port, DETECT_Pin) ==  GPIO_PIN_RESET)  {}
+    //倒车至路口并转入送药房并等待卸药
+
+    /* Reverse(40);
+    autoturn_serial(flag);
+    trace(40);
+    trace(40);
+    //从药房回家 */
+/*
     int8_t flag = 0;
     int8_t i = 0;
     float initial_angle;

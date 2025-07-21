@@ -68,7 +68,7 @@ void reverse_straight(float angle, float speed)
 	while (1)
 	{
 		get_path_serial(value);
-		if(i<50){
+		if(i>20){
 			if ((value[1 - 1] == 1 && value[2 - 1] == 1 && value[3 - 1] == 1 && value[4 - 1] == 1) ||
 				(value[5 - 1] == 1 && value[6 - 1] == 1 && value[7 - 1] == 1 && value[8 - 1] == 1))
 			{

@@ -95,16 +95,15 @@
         {
             "name": "model",
             "includePath": [
-                "d:\\work_office\\keil_project\\2021F_V_03\\Core\\Inc",
-                "d:\\work_office\\keil_project\\2021F_V_03\\Drivers\\STM32H7xx_HAL_Driver\\Inc",
-                "d:\\work_office\\keil_project\\2021F_V_03\\Drivers\\STM32H7xx_HAL_Driver\\Inc\\Legacy",
-                "d:\\work_office\\keil_project\\2021F_V_03\\Drivers\\CMSIS\\Device\\ST\\STM32H7xx\\Include",
-                "d:\\work_office\\keil_project\\2021F_V_03\\Drivers\\CMSIS\\Include",
-                "D:\\work_office\\Keil_v5\\ARM\\ARMCC\\include",
-                "D:\\work_office\\Keil_v5\\ARM\\ARMCC\\include\\rw",
-                "d:\\work_office\\keil_project\\2021F_V_03\\MDK-ARM",
-                "d:\\work_office\\keil_project\\2021F_V_03\\Core\\Src",
-                "d:\\work_office\\keil_project\\2021F_V_03\\Drivers\\STM32H7xx_HAL_Driver\\Src"
+                "c:\\Users\\lbc\\718temp\\Core\\Inc",
+                "c:\\Users\\lbc\\718temp\\Drivers\\STM32H7xx_HAL_Driver\\Inc",
+                "c:\\Users\\lbc\\718temp\\Drivers\\STM32H7xx_HAL_Driver\\Inc\\Legacy",
+                "c:\\Users\\lbc\\718temp\\Drivers\\CMSIS\\Device\\ST\\STM32H7xx\\Include",
+                "c:\\Users\\lbc\\718temp\\Drivers\\CMSIS\\Include",
+                "D:\\keilm\\ARM\\ARMCC\\include",
+                "c:\\Users\\lbc\\718temp\\MDK-ARM",
+                "c:\\Users\\lbc\\718temp\\Core\\Src",
+                "c:\\Users\\lbc\\718temp\\Drivers\\STM32H7xx_HAL_Driver\\Src"
             ],
             "defines": [
                 "USE_HAL_DRIVER",

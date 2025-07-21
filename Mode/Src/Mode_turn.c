@@ -84,7 +84,7 @@ void autoturn_serial(int8_t flag, float turn_speed) // 从当前位置旋转至�
 		HAL_Delay(10);
 	} // 先脱离当前轨道
 
-	while ( !(value[4-1] || value[5-1] || value[3-1] || value[6-1]) &&  (Yaw-start_angle)*flag < 90  )
+	while ( !(value[4-1] || value[5-1]) &&  (Yaw-start_angle)*flag < 80  )
 	{
 		get_path_serial(value);
 		Set_PWM(-speed, speed);

@@ -8,7 +8,7 @@ void task1()
 	int8_t i = 1;
 	float initial_angle = 0;
 	float speed = 60;
-	float turn_speed = 70;
+	float turn_speed = 60;
 	encoder_flag = 0;
 
 	__HAL_TIM_SET_COUNTER(&htim1, 0);
@@ -35,8 +35,8 @@ void task1()
 		for (i = 2; i <= 3; i++)
 		{
 			reset_encoder();
-			if(i == 3)
-				__HAL_TIM_SET_COUNTER(&htim1, 7500);
+			//if(i == 3)
+			//	__HAL_TIM_SET_COUNTER(&htim1, 7500);
 			Set_PWM(speed, speed);
 			HAL_Delay(150);
 			trace_to_cross_serial(speed);
@@ -65,6 +65,7 @@ void task1()
 	}
 
     trace_to_cross_serial(speed);
+	car_brake();
 	// 等待卸药
 	reverse_straight(initial_angle + 90 * flag, 50);
 	// reverse(40);
@@ -84,6 +85,8 @@ void task1()
 		trace_to_cross_serial(speed);
 		i--;
 	}
+	car_brake();
+	//回到药房
 }
 
 void task2()

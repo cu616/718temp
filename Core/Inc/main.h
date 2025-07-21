@@ -31,23 +31,10 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "tim.h"
-#include "usart.h"
-#include "gpio.h"
-#include "i2c.h"
-#include "TB6612.h"
-#include "pid.h"
-#include "filter.h"
-#include "mpu6050.h"
-#include "Trace.h"
-#include "task.h"
-#include "oled.h"
-#include "UI.h"
-#include "mytask.h"
-#include "jy61p.h"
-#include "gw_grayscale_sensor.h"
-#include "GWKJ.h"
-
+#include <Core.h>
+#include <Hardware.h>
+#include <Mode.h>
+#include <Task.h>
 
 #include <stdio.h>
 #include "math.h"
@@ -128,10 +115,10 @@ void Error_Handler(void);
 #define AOUT1_GPIO_Port GPIOD
 #define AOUT2_Pin GPIO_PIN_13
 #define AOUT2_GPIO_Port GPIOD
-#define AIN1_Pin GPIO_PIN_14
-#define AIN1_GPIO_Port GPIOD
-#define AIN2_Pin GPIO_PIN_15
-#define AIN2_GPIO_Port GPIOD
+#define BIN1_Pin GPIO_PIN_14
+#define BIN1_GPIO_Port GPIOD
+#define BIN2_Pin GPIO_PIN_15
+#define BIN2_GPIO_Port GPIOD
 #define PWMA_Pin GPIO_PIN_8
 #define PWMA_GPIO_Port GPIOC
 #define BOUT1_Pin GPIO_PIN_8
@@ -140,10 +127,10 @@ void Error_Handler(void);
 #define BOUT2_GPIO_Port GPIOA
 #define PWMB_Pin GPIO_PIN_15
 #define PWMB_GPIO_Port GPIOA
-#define BIN1_Pin GPIO_PIN_10
-#define BIN1_GPIO_Port GPIOC
-#define BIN2_Pin GPIO_PIN_11
-#define BIN2_GPIO_Port GPIOC
+#define AIN1_Pin GPIO_PIN_10
+#define AIN1_GPIO_Port GPIOC
+#define AIN2_Pin GPIO_PIN_11
+#define AIN2_GPIO_Port GPIOC
 #define DETECT_Pin GPIO_PIN_1
 #define DETECT_GPIO_Port GPIOD
 #define SDA_Pin GPIO_PIN_6
